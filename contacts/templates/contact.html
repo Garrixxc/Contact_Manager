@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact-Info</title>
+</head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<body>
+    <div class="container">
+        <h1>Contact Details</h1>
+        <h3 style="color: rgb(135, 114, 66)">Name: {{mem.firstname}}</h3>
+        <h3 style="color: rgb(135, 114, 66)">Phone Number: {{mem.num}}</h3>
+        <h3 style="color: rgb(135, 114, 66)">Email Address: {{mem.email}}</h3>
+        <h3 style="color: rgb(135, 114, 66)">Notes: {{mem.notes}}</h3>
+        <a href="update/{{x.id}}"><button id="up">Update</button></a>
+        <a href="delete/{{x.id}}"><button id="del">Delete</button></a>
+    </div>
+</body>
+<footer>
+  <hr>
+  <p id="copyright">©Created by Gaurav Salvi.</p>
+</footer>
+
+</html>
+
