@@ -16,7 +16,7 @@ def addrec(request):
     y=request.POST['num']
     z=request.POST['email']
     n=request.POST['notes']
-    if Member.objects.exists:
+    if Member.objects.exists():
         if Member.objects.filter(firstname=x).exists():
             return render(request, 'repeatName.html', {'error_message': 'Name already exists!'}, status=400)
     mem=Member(firstname=x,num=y,email=z, notes=n)
@@ -45,7 +45,7 @@ def uprec(request,id):
     y=request.POST['num']
     z=request.POST['email']
     n=request.POST['notes']
-    if Member.objects.exists:
+    if Member.objects.exists():
         if Member.objects.filter(firstname=x).exists():
             return render(request, 'repeatName.html', {'error_message': 'Name already exists!'}, status=400)
     mem=Member.objects.get(id=id)
