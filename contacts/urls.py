@@ -7,6 +7,7 @@ urlpatterns = [
     path("addrec/",views.addrec,name="addrec"),
     path('delete/<int:id>/',views.delete,name="delete"),
     path('update/<int:id>/',views.update,name="update"),
+    path('repeatName/', views.repeatName, name="repeatName"),
     path('contact/<int:id>/update/', views.update, name="update"),
     path('contact/<int:id>/delete/', views.delete, name="delete"),
     path('contact/<int:id>/delete/delete/', views.confirm_delete, name="delete"),

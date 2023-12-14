@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Member
+from django.http import HttpResponseBadRequest
 
 def index(request):
     mem=Member.objects.all()
@@ -8,11 +9,16 @@ def index(request):
 def add(request):
     return render(request,'add.html')
 
+def repeatName(request):
+    return render(request,'repeatName.html')
+
 def addrec(request):
     x=request.POST['first']
     y=request.POST['num']
     z=request.POST['email']
     n=request.POST['notes']
+    if Member.objects.filter(firstname=x).exists():
+        return render(request, 'repeatName.html', {'error_message': 'Name already exists!'}, status=400)
     mem=Member(firstname=x,num=y,email=z, notes=n)
     mem.save()
     return redirect("/")
