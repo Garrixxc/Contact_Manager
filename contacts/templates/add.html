@@ -6,22 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact-Info</title>
-    <script>
-        function checkUniqueness(value) {
-            let existingValues = Array.from(document.querySelectorAll('[name="first"]')).map(input => input.value);
-            return !existingValues.includes(value);
-        }
-
-    // Function to handle form submission
-        document.querySelector('form').addEventListener('submit', function(event) {
-            let inputField = document.getElementById('unique_field');
-            let value = inputField.value.trim();
-            if (!checkUniqueness(value)) {
-                alert("Value must be unique!");
-                event.preventDefault();
-            }
-        });
-    </script>
 </head>
 {% load static %}
 <link rel="stylesheet" href="{% static 'style.css' %}">
